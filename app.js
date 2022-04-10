@@ -6,7 +6,7 @@ const cors = require("cors");
 // require('dotenv').config();
 const config = require("./config.json");
 
-mongoose.connect("mongodb+srv://reunivro:reunivro@cluster0.dzlpl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority").then(
+mongoose.connect("mongodb+srv://" + config.DB_USER + ":" + config.DB_PASS + "@" + config.DB_ADDRESS + "?retryWrites=true&w=majority").then(
     (err, db) =>{
         if(err) console.log(err);
         console.log("Connected to database");
